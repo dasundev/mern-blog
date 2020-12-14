@@ -4,14 +4,13 @@ const Post = require('../models/postModel');
 router.post('/', async (req, res) => {
 
     //retrive the data from the request
-    const {title, createdAt, tags, html} = req.body;
+    const {title, createdAt, description} = req.body;
    
     //construct the post model
     const newPost = new Post({
         title,
         createdAt,
-        tags,
-        html
+        description,
     });
 
     //save post model
