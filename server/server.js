@@ -14,11 +14,12 @@ app.listen(PORT, () => console.log('Server started on port: ' + PORT));
 
 //set up routes
 
-app.use("/posts", require("./routes/postRoutes"))
+app.use("/posts", require("./routes/postRoutes"));
+app.use("/users", require("./routes/userRoutes"));
 
 //set up mongoose
 //console.log('Server is starting...')
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true},(err) => {
     if (err) return console.error(err);
-    console.log('MongoDB connection established')
+    console.log('MongoDB connection established');
 });
